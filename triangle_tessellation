@@ -1,0 +1,18 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Triangle Tessellation – repeating triangular tiling
+rows, cols = 15, 15
+size = 1
+fig, ax = plt.subplots(figsize=(6,6))
+
+for row in range(rows):
+    for col in range(cols):
+        x = col * size + (row % 2) * size/2
+        y = row * (np.sqrt(3)/2) * size
+        tri = np.array([[x, y], [x+size/2, y+np.sqrt(3)/2*size], [x-size/2, y+np.sqrt(3)/2*size]])
+        ax.fill(tri[:,0], tri[:,1], color=np.random.rand(3,))
+
+ax.set_aspect("equal")
+ax.axis("off")
+plt.show()
