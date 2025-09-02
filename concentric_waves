@@ -1,0 +1,14 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Concentric Waves – overlapping sine waves in circles
+theta = np.linspace(0, 2*np.pi, 800)
+
+plt.figure(figsize=(6,6))
+for r in np.linspace(0.1, 1, 30):
+    x = r * np.cos(theta)
+    y = r * np.sin(theta) + 0.1*np.sin(10*theta+r*10)
+    plt.plot(x, y, lw=0.8)
+
+plt.axis("off")
+plt.show()
