@@ -1,0 +1,17 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Mosaic Grid – colorful randomized square grid
+n = 12
+colors = np.random.rand(n, n, 3)
+
+fig, ax = plt.subplots(figsize=(6,6))
+for i in range(n):
+    for j in range(n):
+        ax.add_patch(plt.Rectangle((i, j), 1, 1, color=colors[i, j]))
+
+ax.set_xlim(0, n)
+ax.set_ylim(0, n)
+ax.set_aspect('equal')
+ax.axis("off")
+plt.show()
