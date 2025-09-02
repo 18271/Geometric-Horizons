@@ -1,0 +1,15 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Spiral Web – layered spirals forming a web-like pattern
+theta = np.linspace(0, 20*np.pi, 2000)
+r = np.linspace(0, 1, 2000)
+x = r * np.cos(theta)
+y = r * np.sin(theta)
+
+plt.figure(figsize=(6,6))
+for k in np.linspace(0, 2*np.pi, 30):
+    plt.plot(x*np.cos(k)-y*np.sin(k), x*np.sin(k)+y*np.cos(k), lw=0.6)
+
+plt.axis("off")
+plt.show()
