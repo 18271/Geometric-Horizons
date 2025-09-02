@@ -1,0 +1,14 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Star Burst – radiating colorful lines like an exploding star
+n = 150
+angles = np.linspace(0, 2*np.pi, n)
+r = np.linspace(0.2, 1, n)
+
+plt.figure(figsize=(6,6))
+for a in angles:
+    plt.plot([0, np.cos(a)], [0, np.sin(a)], lw=1.2, color=np.random.rand(3,))
+
+plt.axis("off")
+plt.show()
